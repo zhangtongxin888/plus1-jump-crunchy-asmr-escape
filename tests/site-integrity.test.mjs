@@ -38,6 +38,7 @@ test("ships SEO, social preview, artwork, and accessible navigation", async () =
 
 test("redirects www to the canonical domain", async () => {
   const config = await source("next.config.ts");
+  assert.match(config, /trailingSlash: true/);
   assert.match(config, /www\.plus1jumpcrunchyasmrescape\.wiki/);
   assert.match(config, /permanent: true/);
 });
