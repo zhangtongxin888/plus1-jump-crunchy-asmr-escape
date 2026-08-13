@@ -1,3 +1,4 @@
+import { AdsterraPopunderGate, AdsterraSocialBarGate, AdsterraStickyRail, AdsterraGlobalFallback } from "@/components/ads";
 import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -32,5 +33,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${display.variable} ${body.variable}`}>{children}</body></html>;
+  return <html lang="en"><body className={`${display.variable} ${body.variable}`}>
+        <AdsterraPopunderGate />
+        <AdsterraSocialBarGate />
+        <AdsterraStickyRail />
+        <AdsterraGlobalFallback />{children}</body></html>;
 }
